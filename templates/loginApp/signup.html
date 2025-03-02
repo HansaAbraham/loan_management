@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block title_block %} User Sign Up {% endblock %}
+{% block body_block %}
+
+{% include 'navbar.html' %}
+
+<div class="container my-5">
+    <div class="row">
+        <div class="p-5 m-auto rounded shadow-lg col-md-5 bg-body">
+            <h3 class="text-center text-success">Welcome! Please Sign Up</h3>
+
+            <form method="POST" action="{% url 'loginApp:signup' %}" class="my-5">
+                {% csrf_token %}
+
+                {% if form.errors %}
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <li><strong>{{ field|title }}:</strong> {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                <div class="mb-4 form-outline">
+                    {% render_field form.username required="true" class="form-control" %}
+                    <label class="form-label">Username</label>
+                </div>
+
+                <div class="mb-4 form-outline">
+                    {% render_field form.email required="true" class="form-control" %}
+                    <label class="form-label">Email Address</label>
+                </div>
+
+                <div class="mb-4 form-outline">
+                    {% render_field form.password1 required="true" class="form-control" %}
+                    <label class="form-label">Password</label>
+                </div>
+
+                <div class="mb-4 form-outline">
+                    {% render_field form.password2 required="true" class="form-control" %}
+                    <label class="form-label">Confirm Password</label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="mb-4 btn btn-primary btn-block">Sign Up</button>
+                </div>
+
+                <div class="text-center">
+                    <p>Already a member? <a href="{% url 'loginApp:login_customer' %}">Sign in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}
+
+
+
+
+
+
