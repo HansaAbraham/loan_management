@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url ,DATABASE_URL
+from dotenv import load_dotenv
+
+
 # import django_heroku
 # import dj_database_url
 # from decouple import config
@@ -48,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'loginApp',
     'loanApp',
-    'managerApp',
+    
     'widget_tweaks',
     'django_cleanup.apps.CleanupConfig',
     'bootstrap4',
@@ -106,9 +110,13 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres@1',
         'HOST': 'localhost',  # Change if using a remote DB
-        'PORT': '5432',       # Default PostgreSQL port
+        'PORT': '5432',
+         'default': dj_database_url.config(default=DATABASE_URL)      # Default PostgreSQL port
     }
 }
+load_dotenv()
+DATABASE_URL = os.getenv("DATABASE_URL", "").replace("postgresql://", "postgres://")
+
 
 
 
