@@ -12,4 +12,4 @@ response = requests.post(url, json=data)
 
 print("Status Code:", response.status_code)
 print("Response:", response.json())
-# Should return access and refresh tokens
+

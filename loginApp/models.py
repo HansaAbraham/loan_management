@@ -52,3 +52,14 @@ class LoanRequest(models.Model):
 #     password = models.PasswordField(max_length=100, blank=False)
 
 # Create your models here.
+
+
+
+
+
+
+# class CustomerLogin(models.Model):
+#     username = models.CharField(max_length=250, blank=False, null=False)
+#     password = models.PasswordField(max_length=100, blank=False)
+
+# Create your models here.

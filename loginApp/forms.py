@@ -43,3 +43,4 @@ class LoanRequestForm(forms.ModelForm):
         model = LoanRequest
         fields = ['amount', 'tenure', 'interest_rate']
 
+

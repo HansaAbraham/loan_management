@@ -185,3 +185,19 @@ def edit_customer(request):
 
 
 # Create your views here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Create your views here.

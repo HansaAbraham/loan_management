@@ -172,3 +172,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'easyapp123@gmail.com'  # Replace with your Gmail
 EMAIL_HOST_PASSWORD = 'Easyapp@123'  # Replace with your App Password
+
+
